@@ -1,4 +1,4 @@
-package com.spring.weather.demo.web;
+package com.spring.weather.demo.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -13,7 +13,7 @@ public class indexController {
         return "weather";
     }
 
-    @GetMapping("/weather/main")
+    @GetMapping("/main")
     public String main() {
         return "weather-main";
     }
