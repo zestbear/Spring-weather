@@ -1,4 +1,4 @@
-package com.spring.weather.domain;
+package com.spring.weather.domain.Gps;
 
 public class GpsTransfer {
 
