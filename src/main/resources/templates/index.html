@@ -1,29 +1,47 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>로그인 필요</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>날씨 조회 서비스</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <style>
     body {
-      background-color: #d3f0ff;
+      background-color: #d4f1ff;
+    }
+    table {
+      background-color: #ffffff;
     }
   </style>
 </head>
 <body>
-
 <div class="container">
-  <div class="row mt-5">
-    <div class="col-md-6 offset-md-3 text-center">
-      <h1>로그인 필요</h1>
-      <p>이 서비스를 이용하려면 먼저 로그인해주세요.</p>
-      <a href="/login" class="btn btn-primary">로그인 페이지로 이동</a>
+  <h1 class="text-center my-5">Weather</h1>
+  <form action="/" method="POST">
+    <div class="form-group">
+      <h4 class="text-left my-4">오늘의 날씨 확인하기</h4>
     </div>
+
+    <a href="/weather/login" th:if="${Name==null}" class="btn btn-primary"role="button">Login</a>
+    <a href="/weather" th:if="${Name!=null}" class="btn btn-primary"role="button">확인</a>
+  </form>
+  <div class="my-4">
+    <table class="table table-horizontal table-bordered">
+      <thead class="thead-strong">
+      <tr>
+        <th>이용자</th>
+        <th>위치</th>
+        <th>날씨</th>
+        <th>시간</th>
+      </tr>
+      </thead>
+      </tbody>
+    </table>
   </div>
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

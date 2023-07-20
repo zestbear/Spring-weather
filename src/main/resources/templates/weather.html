@@ -3,98 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Log-in</title>
+    <title>날씨 조회 서비스</title>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            background-color: #d9efff;
         }
-
-        .login-container {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            max-width: 280px;
-            padding: 20px;
-            text-align: center;
+        .weather-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
         }
-
-        form {
-            margin-top: 10px;
+        h1 {
+            font-size: 32px;
+            margin-bottom: 5px;
         }
-
-        input {
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            display: block;
-            font-size: 14px;
-            margin: 10px auto;
-            padding: 8px;
-            width: 90%;
-        }
-
-        button {
-            background-color: #87ceeb;
-            border: none;
-            border-radius: 5px;
-            color: #ffffff;
-            cursor: pointer;
-            font-size: 14px;
-            margin: 10px 0;
-            padding: 10px;
-            width: 100%;
-        }
-
-        .social-login {
-            margin-top: 20px;
-        }
-
-        .social-login p {
+        h2 {
             font-size: 12px;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
-
-        .social-login button {
-            background-color: initial;
-            border: 1px solid #ccc;
-            margin-bottom: 10px;
+        p {
+            font-size: 18px;
+            margin: 5px 0;
         }
-
-        .kakao {
-            color: #3c1e1e;
-        }
-
-        .naver {
-            color: #1ec800;
-        }
-
-        .google {
-            color: #ea4335;
-        }
-
     </style>
 </head>
 <body>
-<div class="login-container">
-    <h1>Log-in</h1>
-    <form>
-        <input type="text" placeholder="아이디" required>
-        <input type="password" placeholder="비밀번호" required>
-        <button type="submit">로그인</button>
-    </form>
-
-    <div class="social-login">
-        <p>또는</p>
-        <button class="kakao">카카오로 로그인</button>
-        <button class="naver">네이버로 로그인</button>
-        <button class="google">구글로 로그인</button>
-    </div>
+<div class="weather-info">
+    <h1>2023년 7월 18일 06:00 기준 날씨 정보</h1>
+    <h2>사용자님 환영합니다</h2>
+    <p>지역: nx: 55, ny: 127</p>
+    <p>강수 형태: 강수 없음</p>
+    <p>상대 습도: 94%</p>
+    <p>1시간 강수량: 0mm</p>
+    <p>기온: 24.1℃</p>
+    <p>동서바람성분: -0.2 m/s (서풍)</p>
+    <p>풍향: 33도</p>
+    <p>남북바람성분: -0.3 m/s (북풍)</p>
+    <p>풍속: 0.5 m/s</p>
 </div>
 </body>
 </html>
