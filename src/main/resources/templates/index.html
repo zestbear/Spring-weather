@@ -22,9 +22,29 @@
       <h4 class="text-left my-4">오늘의 날씨 확인하기</h4>
     </div>
 
-    <a href="/weather/login" th:if="${Name==null}" class="btn btn-primary"role="button">Login</a>
-    <a href="/weather" th:if="${Name!=null}" class="btn btn-primary"role="button">확인</a>
   </form>
+
+  <button id="actionButton"></button>
+
+  <script>
+    // 가짜 로그인 상태 확인. 실제 상황에서는 쿠키, 로컬 스토리지 또는 서버를 통해 확인해야 합니다.
+    const isLoggedIn = false; // 로그인 상태에 따라 이 값을 변경하세요.
+
+    const actionButton = document.getElementById('actionButton');
+
+    if (isLoggedIn) {
+      actionButton.innerText = 'OK';
+      actionButton.onclick = () => {
+        location.href = 'http://localhost:8080/weather';
+      };
+    } else {
+      actionButton.innerText = 'Login';
+      actionButton.onclick = () => {
+        location.href = 'http://localhost:8080/weather/login';
+      };
+    }
+  </script>
+
   <div class="my-4">
     <table class="table table-horizontal table-bordered">
       <thead class="thead-strong">
