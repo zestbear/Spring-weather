@@ -33,8 +33,17 @@ public class IndexController {
         return "login";
     }
 
+
     @GetMapping("/weather")
-    public String show() {
+    public String show(Model model, @LoginUser SessionUser user) {
+
+        model.addAttribute("lists", listsRepository.findAllDesc());
+
+        if(user != null) {
+            model.addAttribute("User", user.getName());
+        }
+
         return "weather";
     }
+
 }

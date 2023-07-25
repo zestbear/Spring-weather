@@ -21,21 +21,29 @@
     <div class="form-group">
       <h4 class="text-left my-4">오늘의 날씨 확인하기</h4>
     </div>
-
   </form>
 
-  <button id="actionButton"></button>
+  <div th:if="${User}" id="user" style="display: none"></div>
+
+  <button id="actionButton" class="btn btn-info active" role="button"></button>
+  <button id="logout-button" class="btn btn-info active" role="button" style="display:none">Logout</button>
+
+
 
   <script>
-    // 가짜 로그인 상태 확인. 실제 상황에서는 쿠키, 로컬 스토리지 또는 서버를 통해 확인해야 합니다.
-    const isLoggedIn = false; // 로그인 상태에 따라 이 값을 변경하세요.
+    const isLoggedIn = !!document.getElementById('user');
 
     const actionButton = document.getElementById('actionButton');
+    const logoutButton = document.getElementById('logout-button');
 
     if (isLoggedIn) {
       actionButton.innerText = 'OK';
       actionButton.onclick = () => {
         location.href = 'http://localhost:8080/weather';
+      };
+      logoutButton.style.display = 'inline-block';
+      logoutButton.onclick = () => {
+        location.href = '/logout';
       };
     } else {
       actionButton.innerText = 'Login';
@@ -55,7 +63,6 @@
         <th>시간</th>
       </tr>
       </thead>
-      </tbody>
     </table>
   </div>
 </div>

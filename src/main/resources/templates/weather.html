@@ -45,6 +45,8 @@
 <p>Latitude: <input type="number" id="latitude"></p>
 <p>Longitude: <input type="number" id="longitude"></p>
 <button onclick="getWeather()">Get Weather</button>
+<div th:if="${User}" id="user" style="display: none"></div>
+<button th:if="${User}" onclick="window.location.href='/'">Main</button>
 <pre id="weather-output"></pre>
 <script src="app.js"></script>
 </body>
