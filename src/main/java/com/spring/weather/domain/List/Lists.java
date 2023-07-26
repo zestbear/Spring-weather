@@ -16,7 +16,7 @@ public class Lists extends BaseTimeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 500, nullable = false)
+    @Column(length = 1000, nullable = false)
     private String email;
 
     // nullable = false

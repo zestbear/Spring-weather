@@ -27,16 +27,23 @@
 
   <button id="actionButton" class="btn btn-info active" role="button"></button>
   <button id="logout-button" class="btn btn-info active" role="button" style="display:none">Logout</button>
+  <p></p>
 
-
+  <span id="welcome-message" style="display: none;"></span>
 
   <script>
-    const isLoggedIn = !!document.getElementById('user');
+    const userElement = document.getElementById('user');
+    const welcomeMessage = document.getElementById('welcome-message');
+    const isLoggedIn = !!userElement;
 
     const actionButton = document.getElementById('actionButton');
     const logoutButton = document.getElementById('logout-button');
 
     if (isLoggedIn) {
+      const username = userElement.innerText;
+      welcomeMessage.innerText = `로그인 정보 : ${username}`;
+      welcomeMessage.style.display = 'inline';
+
       actionButton.innerText = 'OK';
       actionButton.onclick = () => {
         location.href = 'http://localhost:8080/weather';
@@ -63,7 +70,31 @@
         <th>시간</th>
       </tr>
       </thead>
+      <tbody id="tbody"></tbody>
     </table>
+
+    <script>
+      function fetchWeatherInfos() {
+        fetch('/api/weatherInfos')
+                .then(response => response.json())
+                .then(weatherInfos => {
+                  const tbody = document.getElementById('tbody');
+                  tbody.innerHTML = '';
+
+                  weatherInfos.forEach(weatherInfo => {
+                    const tr = `<tr>
+                        <td>${weatherInfo.user}</td>
+                        <td>${weatherInfo.location}</td>
+                        <td>${weatherInfo.weather}</td>
+                        <td>${weatherInfo.dateTime}</td>
+                    </tr>`;
+                    tbody.innerHTML += tr;
+                  });
+                });
+      }
+
+      fetchWeatherInfos();
+    </script>
   </div>
 </div>
 

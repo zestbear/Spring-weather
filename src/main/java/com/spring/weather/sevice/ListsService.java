@@ -36,12 +36,4 @@ public class ListsService {
                 .collect(Collectors.toList());
     }
 
-    @org.springframework.transaction.annotation.Transactional
-    public void delete(Long id) {
-        Lists posts = listsRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("해당 검색기록이 없습니다. id=" + id));
-
-        listsRepository.delete(posts);
-    }
-
 }
