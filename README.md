@@ -31,7 +31,7 @@
 - Get Weather을 클릭하면 날씨 정보가 팝업 화면으로 뜸
 <img width="1552" alt="스크린샷 2023-07-27 오후 3 12 45" src="https://github.com/zestbear/Spring-weather/assets/49549887/582f1490-33c4-4656-8e04-71491aa32d51">
 <img width="1552" alt="스크린샷 2023-07-27 오후 3 13 28" src="https://github.com/zestbear/Spring-weather/assets/49549887/b5c208cd-35c4-4687-8f7e-085f1fa796d2">
-<img width="512" alt="스크린샷 2023-07-27 오후 3 13 40" src="https://github.com/zestbear/Spring-weather/assets/49549887/a5cbebed-8214-475e-9259-74cfda36c3d4">
+<p align="center"><img width="512" alt="스크린샷 2023-07-27 오후 3 13 40" src="https://github.com/zestbear/Spring-weather/assets/49549887/a5cbebed-8214-475e-9259-74cfda36c3d4"></p>
 
 <날씨 정보>
 - 데이터베이스에 날씨 정보를 insert
