@@ -11,13 +11,13 @@ public class ListsListResponseDto {
     private String email;
     private String location;
     private String weather;
-    private LocalDateTime modifiedDate;
+    private LocalDateTime dateTime;
 
     public ListsListResponseDto(Lists entity) {
         this.id = entity.getId();
         this.email = entity.getEmail();
         this.location = entity.getLocation();
         this.weather = entity.getWeather();
-        this.modifiedDate = entity.getModifiedDate();
+        this.dateTime = entity.getCreatedDate();
     }
 }
