@@ -1,4 +1,4 @@
-package com.spring.weather.sevice;
+package com.spring.weather.service;
 
 import com.spring.weather.domain.List.Lists;
 import com.spring.weather.domain.List.ListsRepository;
@@ -7,8 +7,6 @@ import com.spring.weather.web.dto.ListsResponseDto;
 import com.spring.weather.web.dto.ListsSaveRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,23 +15,20 @@ import java.util.stream.Collectors;
 public class ListsService {
     private final ListsRepository listsRepository;
 
-    @Transactional
-    public Long save(ListsSaveRequestDto requestDto) {
+    public String save(ListsSaveRequestDto requestDto) {
         return listsRepository.save(requestDto.toEntity()).getId();
     }
 
-    public ListsResponseDto findById(Long id) {
+    public ListsResponseDto findById(String id) {
         Lists entity = listsRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id=" + id));
 
         return new ListsResponseDto(entity);
     }
 
-    @org.springframework.transaction.annotation.Transactional(readOnly = true)
     public List<ListsListResponseDto> findAllDesc() {
-        return listsRepository.findAllDesc().stream()
+        return listsRepository.findAll().stream()
                 .map(ListsListResponseDto::new)
                 .collect(Collectors.toList());
     }
-
 }

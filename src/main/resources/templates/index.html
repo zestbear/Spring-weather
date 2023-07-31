@@ -82,11 +82,12 @@
                   tbody.innerHTML = '';
 
                   weatherInfos.forEach(weatherInfo => {
+                    console.log(weatherInfo.dateTime);
                     const tr = `<tr>
                         <td>${weatherInfo.email}</td>
                         <td>${weatherInfo.location}</td>
                         <td>${weatherInfo.weather}</td>
-                        <td>${weatherInfo.dateTime}</td>
+                        <td>${weatherInfo.createdDate}</td>
                     </tr>`;
                     tbody.innerHTML += tr;
                   });

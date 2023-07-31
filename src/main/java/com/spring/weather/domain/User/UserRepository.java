@@ -1,17 +1,8 @@
 package com.spring.weather.domain.User;
 
-import com.spring.weather.domain.List.Lists;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-
-import java.util.List;
+import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.Optional;
 
-public interface UserRepository extends JpaRepository<User, Long> {
-
+public interface UserRepository extends MongoRepository<User, String> {
     Optional<User> findByEmail(String email);
-
-    @Query("SELECT p FROM Lists p ORDER BY p.id DESC")
-    List<Lists> findAllDesc();
-
 }

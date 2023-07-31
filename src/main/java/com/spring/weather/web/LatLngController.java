@@ -3,7 +3,6 @@ package com.spring.weather.web;
 import com.nimbusds.jose.shaded.json.JSONObject;
 import com.nimbusds.jose.shaded.json.parser.JSONParser;
 import com.nimbusds.jose.shaded.json.parser.ParseException;
-import com.spring.weather.sevice.ListsService;
 import com.spring.weather.web.dto.ListsSaveRequestDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 
 import java.util.Map;
@@ -23,7 +21,7 @@ import java.util.Map;
 public class LatLngController {
 
     @Autowired
-    ListsService listsService;
+    com.spring.weather.service.ListsService listsService;
 
     private static final String API_KEY = "32593d19320cc716add753919db4f411";
     private static final String API_URL = "https://api.openweathermap.org/data/2.5/weather?lat=%.6f&lon=%.6f&appid=%s&units=metric";
@@ -91,7 +89,7 @@ public class LatLngController {
                 }
             }
         } else {
-            email = principal.toString(); // 또는 이 경우에 대한 적절한 처리가 필요합니다.
+            email = principal.toString();
         }
 
         // 가져온 지역 이름과 날씨 정보를 저장합니다.

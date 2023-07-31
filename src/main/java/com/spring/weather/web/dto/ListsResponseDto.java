@@ -4,7 +4,7 @@ import com.spring.weather.domain.List.Lists;
 
 public class ListsResponseDto {
 
-    private Long id;
+    private String id;
     private String email;
     private String location;
     private String weather;
@@ -16,7 +16,7 @@ public class ListsResponseDto {
         this.weather= entity.getWeather();
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 

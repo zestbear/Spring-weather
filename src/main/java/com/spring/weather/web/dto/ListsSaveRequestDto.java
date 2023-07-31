@@ -4,12 +4,15 @@ import com.spring.weather.domain.List.Lists;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @NoArgsConstructor
 public class ListsSaveRequestDto {
 
     private String email;
     private String location;
     private String weather;
+    private LocalDateTime createdDate;
 
     @Builder
     public ListsSaveRequestDto(String email, String location, String weather) {

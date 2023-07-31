@@ -1,34 +1,31 @@
 package com.spring.weather.domain.List;
 
 import com.spring.weather.domain.BaseTimeEntity;
+import jdk.vm.ci.meta.Local;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Field;
+
+import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @Getter
-@Entity
+@Document(collection = "lists")
 public class Lists extends BaseTimeEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(length = 1000, nullable = false)
+    private String id;
     private String email;
-
-    // nullable = false
-    @Column(columnDefinition = "TEXT", nullable = true)
     private String location;
-
-    // nullable = false
-    @Column(length = 500, nullable = true)
     private String weather;
 
     @Builder
     public Lists(String email, String location, String weather) {
+
         this.email = email;
         this.location = location;
         this.weather = weather;
