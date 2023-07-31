@@ -40,7 +40,8 @@
 
 
 <메인 화면에 검색 로그>
-<img width="1552" alt="스크린샷 2023-07-27 오후 3 14 01" src="https://github.com/zestbear/Spring-weather/assets/49549887/783fd18e-ea8e-4435-b59a-ffb1793d8a32">
+<img width="1552" alt="스크린샷 2023-07-31 오후 8 22 02" src="https://github.com/zestbear/Spring-weather/assets/49549887/fe527717-59f5-42b1-8626-dc25cc1d1bf0">
+
 
 
 
